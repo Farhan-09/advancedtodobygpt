@@ -59,4 +59,4 @@ function updateProgress() {
     const progress = tasks.length ? (completedTasksCount / tasks.length) * 100 : 0;
     progressBar.style.width = `${progress}%`;
     progressText.textContent = `${Math.round(progress)}%`;
-}
+}   ///function

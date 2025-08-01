@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced To-Do List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 min-h-screen flex items-center justify-center p-6">
+  <div class="glass rounded-3xl shadow-2xl p-8 w-full max-w-2xl border border-white/10">
+    <h1 class="text-4xl font-bold text-slate-100 text-center mb-6">Advanced To-Do List Build By Chatgpt</h1>
+
+    <!-- Task Input Section -->
+    <div class="flex items-center bg-white bg-opacity-10 rounded-full shadow-inner backdrop-blur p-2 mb-6">
+      <input type="text" id="todo-input" placeholder="What do you need to do today?"
+        class="flex-1 bg-transparent text-slate-100 placeholder-slate-300 focus:outline-none px-4 py-2"/>
+      <button id="add-btn" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-full ml-2 transition duration-300">
+        Add
+      </button>
+    </div>
+
+    <!-- Progress Section -->
+    <div class="bg-white bg-opacity-10 rounded-lg p-4 mb-6 backdrop-blur">
+      <div class="flex justify-between mb-2">
+        <span class="text-slate-200">Progress</span>
+        <span class="text-slate-200" id="progress-text">0%</span>
+      </div>
+      <div class="w-full bg-slate-600 rounded-full h-3">
+        <div class="bg-indigo-500 h-3 rounded-full" id="progress-bar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Categories Section -->
+    <div class="flex gap-2 mb-6">
+      <button class="bg-slate-500 text-white px-4 py-2 rounded-full hover:bg-slate-600 transition-all">All</button>
+      <button class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition-all">Work</button>
+      <button class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition-all">Personal</button>
+      <button id="urgent-btn" class="bg-[#BB2649] text-white px-4 py-2 rounded-full hover:bg-[#a41e3c] transition-all">Urgent</button>
+    </div>
+
+    <!-- To-Do List Section -->
+    <ul class="space-y-4 max-h-60 overflow-y-auto" id="todo-list">
+      <!-- Tasks get injected here -->
+    </ul>
+
+    <!-- Completed Tasks Section -->
+    <h2 class="text-2xl font-semibold text-slate-100 mt-8 mb-4">Completed Tasks</h2>
+    <ul class="space-y-2 max-h-40 overflow-y-auto" id="completed-tasks">
+      <!-- Completed tasks will be added here -->
+    </ul>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
